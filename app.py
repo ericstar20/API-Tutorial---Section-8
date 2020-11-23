@@ -4,6 +4,7 @@
 # 2. virtualenv venv --python=python3 (or any version you want to execute in the virtual env): create virtual enviroment
 # 3. source venv/bin/activate : activate the virtual env
 # 4. deactivate : exit the virtual env
+# http://127.0.0.1:5000
 #------------------------------------------------------------------------------------------------------------------------#
 
 #------------------------------------------------------------------------------------------------------------------------#
