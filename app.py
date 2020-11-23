@@ -14,6 +14,8 @@
 #    cmd: python code/app.py
 #    pwd: Users/shih-tien/SW_PRO/Personal Projects/API/section_5
 #------------------------------------------------------------------------------------------------------------------------#
+import os
+
 from flask import Flask
 from flask_restful import Api  # we are no longer need jsonify because flask_restful did for us
 from flask_jwt import JWT
@@ -25,7 +27,7 @@ from resources.store import Store, StoreList
 from db import db
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db' # sqlite can be replace by mysql, postgresql
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///user.db') # sqlite can be replace by mysql, postgresql
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'eric' # In the real life, this key should be hide, complex.
 api = Api(app)
